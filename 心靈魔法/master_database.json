@@ -1,0 +1,195 @@
+{
+  "version": "1.0",
+  "lastUpdate": "2025-01-09",
+  "title": "心靈魔法英靈系統",
+  "description": "1320個獨特英靈組合完整資料庫",
+  
+  "gods": {
+    "ATH": {
+      "code": "ATH",
+      "name": "雅典娜",
+      "title": "理性者",
+      "trait": "邏輯與結構",
+      "element": "智慧",
+      "description": "以理性分析和邏輯思考見長，善於建立結構和系統"
+    },
+    "APH": {
+      "code": "APH",
+      "name": "阿佛洛黛忒",
+      "title": "感性者",
+      "trait": "情感與共鳴",
+      "element": "愛",
+      "description": "以感性直覺和情感連結見長，善於理解和共鳴"
+    },
+    "HER": {
+      "code": "HER",
+      "name": "赫拉克勒斯",
+      "title": "行動者",
+      "trait": "行動與決斷",
+      "element": "力量",
+      "description": "以果斷行動和執行力見長，善於將想法化為現實"
+    },
+    "ODI": {
+      "code": "ODI",
+      "name": "奧丁",
+      "title": "思索者",
+      "trait": "思考與洞見",
+      "element": "智慧",
+      "description": "以深度思考和洞察力見長，善於看透本質"
+    },
+    "PRO": {
+      "code": "PRO",
+      "name": "普羅米修斯",
+      "title": "創造者",
+      "trait": "靈感與創意",
+      "element": "火",
+      "description": "以創新思維和創意見長，善於突破框架"
+    },
+    "ZEU": {
+      "code": "ZEU",
+      "name": "宙斯",
+      "title": "秩序者",
+      "trait": "秩序與規範",
+      "element": "雷電",
+      "description": "以建立秩序和維護規範見長，善於組織管理"
+    },
+    "HOR": {
+      "code": "HOR",
+      "name": "荷魯斯",
+      "title": "領導者",
+      "trait": "領導與方向",
+      "element": "太陽",
+      "description": "以領導統御和指引方向見長，善於帶領團隊"
+    },
+    "LOK": {
+      "code": "LOK",
+      "name": "洛基",
+      "title": "自由者",
+      "trait": "自由與變化",
+      "element": "變化",
+      "description": "以靈活變通和追求自由見長，善於適應變化"
+    },
+    "ISI": {
+      "code": "ISI",
+      "name": "伊西斯",
+      "title": "夢想者",
+      "trait": "夢想與遠見",
+      "element": "星辰",
+      "description": "以遠大夢想和理想願景見長，善於描繪未來"
+    },
+    "HEP": {
+      "code": "HEP",
+      "name": "赫淮斯托斯",
+      "title": "實踐者",
+      "trait": "實際與執行",
+      "element": "鍛造",
+      "description": "以務實執行和精準實踐見長，善於完成任務"
+    },
+    "FRE": {
+      "code": "FRE",
+      "name": "芙蕾雅",
+      "title": "療癒者",
+      "trait": "療癒與承接",
+      "element": "療癒",
+      "description": "以療癒支持和溫柔承接見長，善於撫慰人心"
+    },
+    "AMA": {
+      "code": "AMA",
+      "name": "天照大神",
+      "title": "挑戰者",
+      "trait": "挑戰與突破",
+      "element": "太陽",
+      "description": "以挑戰極限和突破自我見長，善於超越障礙"
+    }
+  },
+
+  "axes": [
+    {
+      "id": 1,
+      "name": "理性-感性",
+      "left": "ATH",
+      "right": "APH"
+    },
+    {
+      "id": 2,
+      "name": "行動-思索",
+      "left": "HER",
+      "right": "ODI"
+    },
+    {
+      "id": 3,
+      "name": "創造-秩序",
+      "left": "PRO",
+      "right": "ZEU"
+    },
+    {
+      "id": 4,
+      "name": "領導-自由",
+      "left": "HOR",
+      "right": "LOK"
+    },
+    {
+      "id": 5,
+      "name": "夢想-實踐",
+      "left": "ISI",
+      "right": "HEP"
+    },
+    {
+      "id": 6,
+      "name": "挑戰-療癒",
+      "left": "AMA",
+      "right": "FRE"
+    }
+  ],
+
+  "combinationLogic": {
+    "total": 1320,
+    "formula": "12 × 11 × 10 = 1320",
+    "encoding": "主神索引 × 110 + 次神索引 × 10 + 隱神索引 + 1",
+    "example": {
+      "0001": "ATH-APH-HER",
+      "0110": "ATH-AMA-FRE",
+      "0111": "APH-ATH-HER",
+      "1320": "AMA-FRE-HEP"
+    }
+  },
+
+  "contentStructure": {
+    "title": "英靈稱號",
+    "personality": "個性本質",
+    "imbalance": "可能失衡",
+    "growth": "成長建議",
+    "poem": "靈魂詩籤",
+    "advantages": {
+      "primary": "主神優勢",
+      "secondary": "次神優勢",
+      "hidden": "隱神優勢"
+    }
+  },
+
+  "sampleCombinations": {
+    "0001": {
+      "code": "ATH-APH-HER",
+      "title": "理性感性平衡者",
+      "personality": "你是理性與感性並存的矛盾體，擅長在邏輯分析後傾聽內心聲音。行動力確保你不會陷入過度思考，能果斷將想法化為現實。",
+      "primaryAdvantage": "清晰的邏輯思維讓你能理性分析問題",
+      "secondaryAdvantage": "豐富的感性直覺為決策增添人性溫度",
+      "hiddenAdvantage": "潛在的行動力確保想法能落實執行"
+    },
+    "0011": {
+      "code": "ATH-HER-APH",
+      "title": "荒原的堅毅行者",
+      "personality": "你習慣用行動證明自己，但內心藏著柔軟的情感。我會陪你前行，讓你知道堅強與溫柔能共存。",
+      "imbalance": "有時你太急於證明自己，反而壓抑了內心的感受。當情感被忽略太久，會在某一刻崩潰。",
+      "growth": "試著在行動之餘停下來感受，讓心也參與決定。你會發現真正的力量來自內外合一。"
+    }
+  },
+
+  "statistics": {
+    "totalCombinations": 1320,
+    "godsCount": 12,
+    "axesCount": 6,
+    "uniqueTitles": 1320,
+    "contentStatus": "已完成所有1320個組合的內容創作"
+  }
+}

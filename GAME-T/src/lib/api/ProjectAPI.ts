@@ -1,13 +1,5 @@
-import { BaseAPI, BaseModel, ApiResponse } from '@/lib/base-api'
-
-export interface Project extends BaseModel {
-  name: string
-  description: string
-  status: 'planning' | 'active' | 'completed' | 'archived'
-  startDate?: string
-  endDate?: string
-  progress: number
-}
+import { BaseAPI, ApiResponse } from '@/lib/base-api'
+import { Project, ProjectTask } from '@/lib/types'
 
 export class ProjectAPI {
   private static MODULE = 'projects'
@@ -16,19 +8,52 @@ export class ProjectAPI {
     return BaseAPI.loadData<Project>(this.MODULE, userId, [])
   }
   
-  static async create(userId: string, project: Partial<Project>): Promise<ApiResponse<Project>> {
-    return BaseAPI.create<Project>(this.MODULE, userId, {
-      ...project,
-      status: project.status || 'planning',
-      progress: project.progress || 0
-    })
+  static async getById(userId: string, id: string): Promise<Project | null> {
+    const projects = await this.getAll(userId)
+    return projects.find(p => p.id === id) || null
   }
   
-  static async update(userId: string, id: string, updates: Partial<Project>): Promise<ApiResponse<Project>> {
-    return BaseAPI.update<Project>(this.MODULE, userId, id, updates)
+  static async create(userId: string, data: Partial<Project>): Promise<ApiResponse<Project>> {
+    return BaseAPI.create<Project>(this.MODULE, userId, data)
+  }
+  
+  static async update(userId: string, id: string, data: Partial<Project>): Promise<ApiResponse<Project>> {
+    return BaseAPI.update<Project>(this.MODULE, userId, id, data)
   }
   
   static async delete(userId: string, id: string): Promise<ApiResponse<void>> {
-    return BaseAPI.delete<Project>(this.MODULE, userId, id)
+    return BaseAPI.delete(this.MODULE, userId, id)
+  }
+  
+  static async updateProgress(userId: string, projectId: string): Promise<ApiResponse<Project>> {
+    const projects = await this.getAll(userId)
+    const project = projects.find(p => p.id === projectId)
+    
+    if (project && project.tasks) {
+      const completed = project.tasks.filter(t => t.status === 'done').length
+      const progress = project.tasks.length > 0 
+        ? Math.round((completed / project.tasks.length) * 100)
+        : 0
+      return this.update(userId, projectId, { progress })
+    }
+    
+    return { success: false, error: 'Project not found' }
+  }
+  
+  static async updateOrder(userId: string, projectIds: string[]): Promise<ApiResponse<Project[]>> {
+    const projects = await this.getAll(userId)
+    const orderedProjects = projectIds.map((id, index) => {
+      const project = projects.find(p => p.id === id)
+      if (project) {
+        return { ...project, order: index }
+      }
+      return null
+    }).filter(Boolean) as Project[]
+    
+    const saved = await BaseAPI.saveData(this.MODULE, userId, orderedProjects)
+    return {
+      success: saved.success,
+      data: orderedProjects
+    }
   }
 }

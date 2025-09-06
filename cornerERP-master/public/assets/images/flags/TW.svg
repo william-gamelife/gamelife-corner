@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="11" viewBox="0 0 17 11">
+    <g id="g1">
+        <path id="path1" fill="#fe0000" fill-rule="evenodd" stroke="none" d="M -0 0 L 17 0 L 17 11 L -0 11 Z"/>
+        <path id="path2" fill="#000095" fill-rule="evenodd" stroke="none" d="M -0 0 L 8.5 0 L 8.5 5.5 L -0 5.5 Z"/>
+    </g>
+    <path id="path3" fill="#ffffff" stroke="none" d="M 4.25 0.6875 L 3.1875 4.53618 L 6.090307 1.71875 L 2.125 2.75 L 6.090307 3.78125 L 3.1875 0.96382 L 4.25 4.8125 L 5.3125 0.96382 L 2.409693 3.78125 L 6.375 2.75 L 2.409693 1.71875 L 5.3125 4.53618 L 4.25 0.6875"/>
+    <path id="path4" fill="#ffffff" stroke="#000095" stroke-width="0.139583" stroke-linecap="round" stroke-linejoin="round" d="M 5.383333 2.75 C 5.383333 3.357513 4.875923 3.85 4.25 3.85 C 3.624077 3.85 3.116667 3.357513 3.116667 2.75 C 3.116667 2.142487 3.624077 1.65 4.25 1.65 C 4.875923 1.65 5.383333 2.142487 5.383333 2.75 Z"/>
+</svg>

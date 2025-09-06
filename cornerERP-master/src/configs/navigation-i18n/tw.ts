@@ -1,0 +1,14 @@
+const locale = {
+	CALENDAR_MANAGEMENT: '日曆管理',
+	GROUP_MANAGEMENT: '旅遊團',
+	CUSTOMER_MANAGEMENT: '顧客管理',
+	ORDER_MANAGEMENT: '訂單管理',
+	RECEIPT_MANAGEMENT: '收款單',
+	INVOICE_MANAGEMENT: '請款單',
+	BILL_MANAGEMENT: '出納單',
+	EMPLOYEE_MANAGEMENT: '員工管理',
+	SUPPLIER_MANAGEMENT: '供應商管理',
+	ESIM_MANAGEMENT: '網卡管理'
+};
+
+export default locale;
