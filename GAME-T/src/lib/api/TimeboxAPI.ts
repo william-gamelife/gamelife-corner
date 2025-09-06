@@ -26,6 +26,20 @@ export class TimeboxAPI {
     return BaseAPI.delete(this.ENTRIES_MODULE, userId, id)
   }
   
+  static async bulkCreateEntries(userId: string, entries: Partial<TimeboxEntry>[]): Promise<ApiResponse<TimeboxEntry[]>> {
+    const results: TimeboxEntry[] = []
+    for (const entry of entries) {
+      const result = await this.createEntry(userId, entry)
+      if (result.success && result.data) {
+        results.push(result.data)
+      }
+    }
+    return {
+      success: results.length === entries.length,
+      data: results
+    }
+  }
+  
   // 活動類型
   static async getActivities(userId: string): Promise<TimeboxActivity[]> {
     return BaseAPI.loadData<TimeboxActivity>(this.ACTIVITIES_MODULE, userId, [])

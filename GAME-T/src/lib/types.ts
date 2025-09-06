@@ -76,3 +76,19 @@ export interface UserSettings {
   notifications: boolean
   timezone: string
 }
+
+// ========== Finance 相關類型（預留）==========
+export interface FinanceRecord extends BaseModel {
+  type: 'income' | 'expense'
+  amount: number
+  category: string
+  description?: string
+  date: string
+}
+
+export interface FinanceCategory extends BaseModel {
+  name: string
+  type: 'income' | 'expense'
+  color: string
+  icon?: string
+}
